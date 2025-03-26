@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Contact</title>
-	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-	<style>
-			            /* Define custom fonts */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Primaries - Mobile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
         @font-face {
-            font-family: 'Born2bSporty FS';
+            font-family: 'Born2bSportyFS';
             src: url('Born2bSportyFS.otf') format('opentype');
         }
 
-        @font-face {
-            font-family: 'Funnel Sans';
-            src: url('FunnelSans-VariableFont_wght.ttf') format('truetype');
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Born2bSportyFS', sans-serif;
+            background-color: #FFFFFF;
+            color: #1c1c1c;
         }
-		body, html {
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-			background-color: #FFFFFF;
-			color: #fff;
-		}
-		header {
-			width: 100%;
-			background-color: #1c1c1c;
-			padding: 20px 0;
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 1000;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.pixel-title {
-			font-size: 50px;
-			font-family: 'Born2bSporty FS', cursive;
-			color: #FFFFFF;
-			margin-left: 20px;
-		}
-		.nav-menu {
-			display: flex;
-			gap: 20px;
-			margin-right: 20px;
-		}
-		.nav-item {
-			font-size: 25px;
-			font-family: 'Born2bSporty FS', cursive;
-			color: #FFFFFF;
-			text-decoration: none;
-			text-transform: uppercase;
-			transition: transform 0.2s ease-in-out;
-		}
-		.nav-item:hover {
-			transform: scale(1.05);
 
-		}
+        header {
+            background-color: #1c1c1c;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .pixel-title {
+            font-size: 30px;
+            font-family: 'Born2bSportyFS', sans-serif;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            font-size: 16px;
+            font-family: 'Born2bSportyFS', sans-serif;
+            color: #FFFFFF;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
         .about-container {
             margin-top: 160px;
