@@ -14,7 +14,7 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Born2bSportyFS', Arial, sans-serif;
+            font-family: 'Born2bSportyFS', sans-serif;
             background-color: #FFFFFF;
             color: #1c1c1c;
         }
@@ -27,6 +27,7 @@
 
         .pixel-title {
             font-size: 32px;
+            font-family: 'Born2bSportyFS', sans-serif;
             color: #FFFFFF;
             margin-bottom: 10px;
         }
@@ -40,6 +41,7 @@
 
         .nav-item {
             font-size: 18px;
+            font-family: 'Born2bSportyFS', sans-serif;
             color: #FFFFFF;
             text-decoration: none;
             text-transform: uppercase;
@@ -64,12 +66,14 @@
 
         .state-name {
             font-size: 48px;
+            font-family: 'Born2bSportyFS', sans-serif;
             margin: 5px 0;
         }
 
         .state-tagline {
             font-size: 24px;
-            color: #7a7a7a;
+            font-family: 'Born2bSportyFS', sans-serif;
+            color: #1c1c1c;
             margin-bottom: 15px;
         }
 
@@ -86,6 +90,7 @@
         .zipcode-form button {
             padding: 12px;
             font-size: 16px;
+            font-family: 'Born2bSportyFS', sans-serif;
             border: 2px solid #1c1c1c;
             text-transform: uppercase;
         }
@@ -106,6 +111,7 @@
         .district-link {
             margin-top: 15px;
             font-size: 14px;
+            font-family: 'Born2bSportyFS', sans-serif;
             color: #1c1c1c;
             text-decoration: none;
         }
@@ -129,10 +135,10 @@
             <div class="state-name">ILLINOIS</div>
             <div class="state-tagline">THE LINCOLN STATE</div>
             <form class="zipcode-form" onsubmit="handleSubmit(event)">
-                <input type="text" id="district" placeholder="ENTER DISTRICT NUMBER">
+                <input type="text" id="district" placeholder="ENTER CONGRESSIONAL DISTRICT NUMBER">
                 <button type="submit">Submit</button>
             </form>
-            <p id="error-message">Enter a district number between 1 and 17.</p>
+            <p id="error-message">PLEASE ENTER A VALID DISTRICT NUMBER BETWEEN 1 AND 17</p>
             <a class="district-link" href="https://www.house.gov/representatives/find-your-representative" target="_blank">Find your district here</a>
         </div>
     </div>
