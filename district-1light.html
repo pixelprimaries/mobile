@@ -115,7 +115,6 @@
             flex: 0 0 auto;
             width: 180px;
             height: 180px;
-            background-color: #1c1c1c;
             border-radius: 10px;
             overflow: hidden;
             position: relative;
@@ -134,19 +133,19 @@
             object-position: left;
         }
 
-        .candidate-info {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 160px;
-            height: 100%;
-            background-color: rgba(28,28,28,0.95);
-            color: #FFFFFF;
-            padding: 8px;
-            box-sizing: border-box;
-            display: none;
-            font-family: 'Funnel Sans', Arial, sans-serif;
-            font-size: 12px;
+	.candidate-info {
+    	    display: none;
+    	    padding: 10px;
+    	    font-size: 10px;
+	    font-family: 'Funnel Sans', cursive;
+	    text-align: right;
+    	    position: absolute;
+   	    top: 0;
+   	    left: 5%; /* Position it next to the tile */
+   	    width: 345px;
+   	    height: 100%;
+   	    background-color: #00000000;
+    	    color: #FFFFFF;
         }
 
         .candidate-tile.expanded .candidate-info {
@@ -154,9 +153,15 @@
         }
 
         .candidate-name {
-            font-size: 16px;
-            margin-bottom: 5px;
-            text-align: left;
+            font-size: 25px;
+            font-family: 'Born2bSporty FS', cursive;
+	    text-align: right;
+	    width: 350px;
+ 	    color: #FFFFFF;
+            margin: 15px 0;
+ 	    margin-top: 5px;
+	    margin-bottom: 25px;
+	    margin-left: -5px;
         }
 
         .stat-link {
