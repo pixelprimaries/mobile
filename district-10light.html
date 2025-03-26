@@ -288,65 +288,17 @@
             </div>
         </div>
     </div>
-</div>
-<script>
-    // Function to open a popup window with a specified background color
-    function openPopup(imageUrl) {
-        const popupWidth = 580; // Width of the popup
-        const popupHeight = 525; // Height of the popup
-        const left = (window.innerWidth - popupWidth) / 2; // Center horizontally
-        const top = (window.innerHeight - popupHeight) / 2; // Center vertically
+    <script>
+        function openPopup(url) {
+            window.open(url, '_blank', 'width=580,height=525');
+        }
 
-        // Open a new popup window
-        const popup = window.open(
-            '',
-            'CandidatePopup',
-            `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=yes,scrollbars=no`
-        );
-
-        // Set the popup's content with a custom background color and the image
-        const backgroundColor = '#FFFFFF'; // Desired background color for the popup
-        popup.document.write(`
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Stat Block</title>
-                <style>
-                    body {
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: ${backgroundColor};
-                        height: 100vh;
-                    }
-                    img {
-                        max-width: 100%;
-                        max-height: 100%;
-                        display: block;
-                    }
-                </style>
-            </head>
-            <body>
-                <img src="${imageUrl}" alt="Stat Block">
-            </body>
-            </html>
-        `);
-
-        // Close the popup's document to finish loading
-        popup.document.close();
-    }
-
-    // Attach event listeners to all links with the 'popup-link' class
-    document.querySelectorAll('.popup-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            const url = this.dataset.url; // Get the URL from the data-url attribute
-            openPopup(url); // Call the popup function with the image URL
+        document.querySelectorAll('.candidate-tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                tile.classList.toggle('expanded');
+            });
         });
-    });
-</script>
+    </script>
+</body>
+</html>
 
