@@ -261,83 +261,17 @@
             </div>
         </div>
     </div>
-</div>
-<script>
-	// Store open popups
-	let openPopups = [];
+    <script>
+        function openPopup(url) {
+            window.open(url, '_blank', 'width=580,height=525');
+        }
 
-	function openPopup(imageUrl) {
-		const popupWidth = 580;
-		const popupHeight = 525;
-		const left = (window.innerWidth - popupWidth) / 2 + (openPopups.length * 30); // Offset new popups slightly
-		const top = (window.innerHeight - popupHeight) / 2 + (openPopups.length * 30); 
-
-		// Generate a unique name for each popup
-		const popupName = `CandidatePopup_${openPopups.length}`;
-
-		// Open a new popup window
-		const popup = window.open(
-			'',
-			popupName, // Unique name for each popup
-			`width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=yes,scrollbars=no`
-		);
-
-		if (popup) {
-			// Set the popup's content
-			const backgroundColor = '#FFFFFF'; // Background color for the popup
-			popup.document.write(`
-				<!DOCTYPE html>
-				<html lang="en">
-				<head>
-					<meta charset="UTF-8">
-					<meta name="viewport" content="width=device-width, initial-scale=1.0">
-					<title>Stat Block</title>
-					<style>
-						body {
-							margin: 0;
-							padding: 0;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							background-color: ${backgroundColor};
-							height: 100vh;
-						}
-						img {
-							max-width: 100%;
-							max-height: 100%;
-							display: block;
-						}
-					</style>
-				</head>
-				<body>
-					<img src="${imageUrl}" alt="Stat Block">
-				</body>
-				</html>
-			`);
-			popup.document.close(); // Finish loading
-
-			// Store reference to popup
-			openPopups.push(popup);
-
-			// Prevent the popup from losing focus
-			const keepFocused = setInterval(() => {
-				if (!popup.closed) {
-					popup.focus();
-				} else {
-					clearInterval(keepFocused); // Stop checking when closed
-					openPopups = openPopups.filter(p => p !== popup);
-				}
-			}, 100);
-		}
-	}
-
-	// Attach event listeners to all links with the 'popup-link' class
-	document.querySelectorAll('.popup-link').forEach(link => {
-		link.addEventListener('click', function(event) {
-			event.preventDefault(); // Prevent default link behavior
-			const url = this.dataset.url; // Get the URL from the data-url attribute
-			openPopup(url); // Call the popup function with the image URL
-		});
-	});
-</script>
+        document.querySelectorAll('.candidate-tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                tile.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
 
